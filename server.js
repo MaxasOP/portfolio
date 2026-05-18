@@ -18,6 +18,8 @@ app.get('*', (req, res) => {
     '/contact': 'contact.html',
     '/sitemap.xml': 'sitemap.xml',
     '/sitemap.html': 'sitemap.html',
+    '/favicon.svg': 'favicon.svg',
+    '/favicon.ico': 'favicon.svg',
     '/robots.txt': 'robots.txt'
   };
 
@@ -27,6 +29,7 @@ app.get('*', (req, res) => {
   if (!fs.existsSync(filePath)) return res.status(404).send('Not found');
   const ext = path.extname(filePath).toLowerCase();
   if (ext === '.xml') return res.type('application/xml').sendFile(filePath);
+  if (ext === '.svg') return res.type('image/svg+xml').sendFile(filePath);
   if (ext === '.txt') return res.type('text/plain').sendFile(filePath);
   return res.sendFile(filePath);
 });

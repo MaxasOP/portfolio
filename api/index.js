@@ -17,6 +17,8 @@ module.exports = (req, res) => {
       '/contact.html': 'contact.html',
       '/sitemap.xml': 'sitemap.xml',
       '/sitemap.html': 'sitemap.html',
+      '/favicon.svg': 'favicon.svg',
+      '/favicon.ico': 'favicon.svg',
       '/robots.txt': 'robots.txt'
     };
 
@@ -31,8 +33,8 @@ module.exports = (req, res) => {
     }
 
     const ext = path.extname(filePath).toLowerCase();
-    const textTypes = ['.html', '.xml', '.txt'];
-    const contentType = textTypes.includes(ext) ? (ext === '.xml' ? 'application/xml' : ext === '.txt' ? 'text/plain' : 'text/html; charset=utf-8') : 'application/octet-stream';
+    const textTypes = ['.html', '.xml', '.txt', '.svg'];
+    const contentType = textTypes.includes(ext) ? (ext === '.xml' ? 'application/xml' : ext === '.txt' ? 'text/plain' : ext === '.svg' ? 'image/svg+xml' : 'text/html; charset=utf-8') : 'application/octet-stream';
 
     const data = fs.readFileSync(filePath);
     res.statusCode = 200;
