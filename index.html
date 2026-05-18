@@ -2152,27 +2152,5 @@
       });
     }
   </script>
-    // Simplified homepage - only magnetic button interaction
-    const magneticButtons = [...document.querySelectorAll(".magnetic")];
-    if (!reducedMotion) {
-      magneticButtons.forEach((button) => {
-        button.addEventListener("mousemove", (event) => {
-          const rect = button.getBoundingClientRect();
-          const x = event.clientX - rect.left - rect.width / 2;
-          const y = event.clientY - rect.top - rect.height / 2;
-          button.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
-        });
-        button.addEventListener("mouseleave", () => {
-          button.style.transform = "";
-        });
-      });
-      window.addEventListener("pointermove", (event) => {
-        const x = (event.clientX / window.innerWidth) * 100;
-        const y = (event.clientY / window.innerHeight) * 100;
-        document.body.style.setProperty("--pointer-x", `${x}%`);
-        document.body.style.setProperty("--pointer-y", `${y}%`);
-      });
-    }
-  </script>
 </body>
 </html>
