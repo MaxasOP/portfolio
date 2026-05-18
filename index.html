@@ -313,6 +313,305 @@
       font-size: 1rem;
     }
 
+    .reel {
+      padding-top: 1rem;
+      padding-bottom: 4.2rem;
+    }
+
+    .reel-layout {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .reel-copy {
+      position: sticky;
+      top: 6.1rem;
+      align-self: start;
+    }
+
+    .reel-intro {
+      margin-top: 0.8rem;
+      max-width: 44ch;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .reel-steps {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .reel-step {
+      padding: 1rem 1rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.72);
+      opacity: 0.55;
+      transform: translateX(-10px);
+      transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .reel-step.active {
+      opacity: 1;
+      transform: none;
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .reel-step-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.4rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .reel-step h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.3rem;
+    }
+
+    .reel-step p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .reel-stage {
+      position: relative;
+    }
+
+    .reel-screen {
+      position: sticky;
+      top: 6.1rem;
+      min-height: 76vh;
+      border: 1px solid var(--line);
+      border-radius: 2rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.64));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 1rem;
+      isolation: isolate;
+    }
+
+    .reel-screen::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(900px 500px at 15% 15%, rgba(36, 87, 255, 0.12), transparent 50%),
+        radial-gradient(700px 460px at 85% 18%, rgba(15, 157, 115, 0.1), transparent 46%),
+        linear-gradient(180deg, rgba(17, 19, 26, 0.03), transparent 42%);
+      pointer-events: none;
+    }
+
+    .reel-screen::after {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(17, 19, 26, 0.07);
+      pointer-events: none;
+    }
+
+    .reel-frame {
+      position: absolute;
+      inset: 1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 1rem;
+      align-items: stretch;
+      opacity: 0;
+      transform: translateY(18px) scale(0.985);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .reel-frame.active {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .frame-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.05rem 1rem;
+    }
+
+    .frame-kicker {
+      display: inline-flex;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .frame-copy h3 {
+      margin-top: 0.45rem;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 8ch;
+    }
+
+    .frame-copy p {
+      max-width: 32ch;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .frame-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .frame-metrics span {
+      padding: 0.35rem 0.55rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .frame-art {
+      --tone-a: #17233f;
+      --tone-b: #2457ff;
+      --glow-a: rgba(255, 255, 255, 0.92);
+      --glow-b: rgba(36, 87, 255, 0.45);
+      position: relative;
+      border-radius: 1.35rem;
+      overflow: hidden;
+      border: 1px solid rgba(17, 19, 26, 0.1);
+      background: linear-gradient(135deg, var(--tone-a), var(--tone-b));
+      min-height: 100%;
+      animation: reelFloat 10s ease-in-out infinite alternate;
+    }
+
+    .frame-art::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(220px 220px at 72% 26%, var(--glow-a), transparent 18%),
+        radial-gradient(300px 300px at 22% 78%, var(--glow-b), transparent 34%),
+        radial-gradient(circle at 42% 38%, rgba(255, 255, 255, 0.16), transparent 42%);
+      opacity: 0.95;
+      transform: rotate(8deg);
+    }
+
+    .frame-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mix-blend-mode: overlay;
+      opacity: 0.22;
+    }
+
+    .frame-art-0 {
+      --tone-a: #17233f;
+      --tone-b: #2457ff;
+      --glow-a: rgba(255, 255, 255, 0.94);
+      --glow-b: rgba(36, 87, 255, 0.45);
+    }
+
+    .frame-art-1 {
+      --tone-a: #12261f;
+      --tone-b: #0f9d73;
+      --glow-a: rgba(255, 255, 255, 0.92);
+      --glow-b: rgba(15, 157, 115, 0.42);
+    }
+
+    .frame-art-2 {
+      --tone-a: #182642;
+      --tone-b: #2c7cff;
+      --glow-a: rgba(255, 255, 255, 0.92);
+      --glow-b: rgba(44, 124, 255, 0.4);
+    }
+
+    .frame-art-3 {
+      --tone-a: #2d2012;
+      --tone-b: #ff8a3d;
+      --glow-a: rgba(255, 255, 255, 0.9);
+      --glow-b: rgba(255, 138, 61, 0.38);
+    }
+
+    .frame-art-4 {
+      --tone-a: #0f1626;
+      --tone-b: #1c2030;
+      --glow-a: rgba(255, 255, 255, 0.95);
+      --glow-b: rgba(255, 255, 255, 0.2);
+    }
+
+    .reel-progress {
+      position: absolute;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .reel-progress-track {
+      position: relative;
+      flex: 1;
+      height: 0.45rem;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(17, 19, 26, 0.08);
+    }
+
+    .reel-progress-fill {
+      display: block;
+      height: 100%;
+      width: 20%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(36, 87, 255, 0.35);
+      transition: width 0.35s ease;
+    }
+
+    @keyframes reelFloat {
+      from {
+        transform: translateY(0) scale(1);
+      }
+
+      to {
+        transform: translateY(-8px) scale(1.01);
+      }
+    }
+
     .hero {
       padding: 3.8rem 0 2rem;
       min-height: calc(100vh - 4.8rem);
@@ -1066,6 +1365,30 @@
       .hero-panel h2 {
         font-size: clamp(1.5rem, 2.5vw, 2.2rem);
       }
+
+      .reel-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .reel-copy {
+        position: static;
+      }
+
+      .reel-stage {
+        order: -1;
+      }
+
+      .reel-screen {
+        position: relative;
+        top: auto;
+        min-height: 0;
+      }
+
+      .reel-frame {
+        position: relative;
+        inset: 0;
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
@@ -1171,6 +1494,42 @@
       .hero h1 {
         font-size: clamp(2.5rem, 8vw, 4.5rem);
         margin: 0.5rem 0 0.8rem;
+      }
+
+      .reel {
+        padding-top: 0.5rem;
+        padding-bottom: 3.2rem;
+      }
+
+      .reel-screen {
+        padding: 0.75rem;
+      }
+
+      .reel-screen::after {
+        inset: 0.75rem;
+      }
+
+      .reel-frame {
+        gap: 0.75rem;
+      }
+
+      .frame-copy {
+        padding: 0.9rem 0.85rem 0.8rem;
+      }
+
+      .frame-copy h3 {
+        max-width: none;
+      }
+
+      .frame-art {
+        min-height: 18rem;
+        border-radius: 1.1rem;
+      }
+
+      .reel-progress {
+        left: 1rem;
+        right: 1rem;
+        bottom: 0.85rem;
       }
 
       .hero-lead {
@@ -1912,10 +2271,151 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="reel" class="reel">
       <div class="container">
         <div class="section-head reveal">
           <div class="section-index">01</div>
+          <div class="section-title-group">
+            <span class="eyebrow">Cinematic reel</span>
+            <h2 class="section-title">Scroll through a frame-by-frame story of how the page comes alive.</h2>
+            <p class="section-copy">
+              A sticky sequence built in HTML, CSS, and JavaScript. Each frame swaps in as you move down the page, so the home page feels more like a short film than a static layout.
+            </p>
+          </div>
+        </div>
+
+        <div class="reel-layout">
+          <div class="reel-copy reveal">
+            <p class="reel-intro">
+              The reel moves from blueprint to launch: quiet structure, layered motion, then a polished final beat.
+            </p>
+
+            <div class="reel-steps">
+              <article class="reel-step active" data-frame="0">
+                <span class="reel-step-kicker">Frame 01</span>
+                <h3>Blueprint</h3>
+                <p>Clear spacing, a calm background, and the first pulse of motion.</p>
+              </article>
+              <article class="reel-step" data-frame="1">
+                <span class="reel-step-kicker">Frame 02</span>
+                <h3>Structure</h3>
+                <p>The layout locks into a confident editorial grid with sharper contrast.</p>
+              </article>
+              <article class="reel-step" data-frame="2">
+                <span class="reel-step-kicker">Frame 03</span>
+                <h3>Motion</h3>
+                <p>Layers start to drift and stack, giving the page its depth and rhythm.</p>
+              </article>
+              <article class="reel-step" data-frame="3">
+                <span class="reel-step-kicker">Frame 04</span>
+                <h3>Polish</h3>
+                <p>Type, glow, and detail tighten up until the frame feels fully finished.</p>
+              </article>
+              <article class="reel-step" data-frame="4">
+                <span class="reel-step-kicker">Frame 05</span>
+                <h3>Launch</h3>
+                <p>The sequence resolves into a clean final composition with a strong finish.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="reel-stage reveal" aria-label="Scroll driven frame sequence">
+            <div class="reel-screen">
+              <div class="reel-frame active" data-frame="0">
+                <div class="frame-copy">
+                  <div>
+                    <span class="frame-kicker">Frame 01</span>
+                    <h3>Blueprint</h3>
+                  </div>
+                  <p>Quiet layers, disciplined spacing, and the first visual cue that the page is about to move.</p>
+                  <div class="frame-metrics">
+                    <span>System</span>
+                    <span>Calm</span>
+                    <span>First pulse</span>
+                  </div>
+                </div>
+                <div class="frame-art frame-art-0" aria-hidden="true"></div>
+              </div>
+
+              <div class="reel-frame" data-frame="1">
+                <div class="frame-copy">
+                  <div>
+                    <span class="frame-kicker">Frame 02</span>
+                    <h3>Structure</h3>
+                  </div>
+                  <p>The composition tightens into an editorial grid, with contrast doing the heavy lifting.</p>
+                  <div class="frame-metrics">
+                    <span>Grid</span>
+                    <span>Contrast</span>
+                    <span>Rhythm</span>
+                  </div>
+                </div>
+                <div class="frame-art frame-art-1" aria-hidden="true"></div>
+              </div>
+
+              <div class="reel-frame" data-frame="2">
+                <div class="frame-copy">
+                  <div>
+                    <span class="frame-kicker">Frame 03</span>
+                    <h3>Motion</h3>
+                  </div>
+                  <p>Transparent layers and drifting surfaces make the experience feel alive while you scroll.</p>
+                  <div class="frame-metrics">
+                    <span>Layers</span>
+                    <span>Depth</span>
+                    <span>Drift</span>
+                  </div>
+                </div>
+                <div class="frame-art frame-art-2" aria-hidden="true"></div>
+              </div>
+
+              <div class="reel-frame" data-frame="3">
+                <div class="frame-copy">
+                  <div>
+                    <span class="frame-kicker">Frame 04</span>
+                    <h3>Polish</h3>
+                  </div>
+                  <p>The glow sharpens, typography settles, and the whole frame starts to feel production-ready.</p>
+                  <div class="frame-metrics">
+                    <span>Type</span>
+                    <span>Texture</span>
+                    <span>Finish</span>
+                  </div>
+                </div>
+                <div class="frame-art frame-art-3" aria-hidden="true"></div>
+              </div>
+
+              <div class="reel-frame" data-frame="4">
+                <div class="frame-copy">
+                  <div>
+                    <span class="frame-kicker">Frame 05</span>
+                    <h3>Launch</h3>
+                  </div>
+                  <p>A final confident frame, tuned to land like the last shot in a short editorial film.</p>
+                  <div class="frame-metrics">
+                    <span>Ready</span>
+                    <span>Fast</span>
+                    <span>Memorable</span>
+                  </div>
+                </div>
+                <div class="frame-art frame-art-4" aria-hidden="true"></div>
+              </div>
+
+              <div class="reel-progress" aria-hidden="true">
+                <span class="reel-progress-value">01</span>
+                <div class="reel-progress-track"><i class="reel-progress-fill"></i></div>
+                <span class="reel-progress-total">05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index">02</div>
           <div class="section-title-group">
             <span class="eyebrow">About</span>
             <h2 class="section-title">Builder mindset, business instinct.</h2>
@@ -2101,6 +2601,52 @@
     );
 
     document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+
+    const reelSteps = [...document.querySelectorAll(".reel-step")];
+    const reelFrames = [...document.querySelectorAll(".reel-frame")];
+    const reelProgressFill = document.querySelector(".reel-progress-fill");
+    const reelProgressValue = document.querySelector(".reel-progress-value");
+
+    function setReelFrame(index) {
+      reelSteps.forEach((step, stepIndex) => {
+        step.classList.toggle("active", stepIndex === index);
+      });
+
+      reelFrames.forEach((frame, frameIndex) => {
+        frame.classList.toggle("active", frameIndex === index);
+      });
+
+      if (reelProgressFill && reelFrames.length) {
+        const progress = ((index + 1) / reelFrames.length) * 100;
+        reelProgressFill.style.width = `${progress}%`;
+      }
+
+      if (reelProgressValue) {
+        reelProgressValue.textContent = String(index + 1).padStart(2, "0");
+      }
+    }
+
+    if (reelFrames.length) {
+      setReelFrame(0);
+
+      const reelObserver = new IntersectionObserver(
+        (entries) => {
+          const activeEntries = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+
+          if (activeEntries.length) {
+            const frameIndex = Number(activeEntries[0].target.dataset.frame || 0);
+            if (activeEntries[0].intersectionRatio >= 0.45) {
+              setReelFrame(frameIndex);
+            }
+          }
+        },
+        { threshold: [0.45, 0.6, 0.75] }
+      );
+
+      reelSteps.forEach((step) => reelObserver.observe(step));
+    }
 
     const interactiveNodes = [...document.querySelectorAll(".interactive")];
 
