@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Sitemap for the Manas Chauhan portfolio, including the homepage and section anchors.">
+  <link rel="canonical" href="https://manaschauhan.vercel.app/sitemap.html">
+  <title>Sitemap | Manas Chauhan</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1eb;
+      --surface: rgba(255, 255, 255, 0.82);
+      --ink: #11131a;
+      --muted: #5e6370;
+      --line: rgba(17, 19, 26, 0.12);
+      --accent: #2457ff;
+      --accent-2: #0f9d73;
+      --shadow: 0 20px 50px rgba(17, 19, 26, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 500px at 90% 0%, rgba(36, 87, 255, 0.14), transparent 50%),
+        radial-gradient(650px 420px at 10% 20%, rgba(15, 157, 115, 0.11), transparent 52%),
+        linear-gradient(180deg, #f7f5ef 0%, #ede8de 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .wrap {
+      width: min(760px, 100%);
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.4rem;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      backdrop-filter: blur(14px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    li a {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.76);
+      padding: 0.95rem 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    li a:hover,
+    li a:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(36, 87, 255, 0.35);
+      box-shadow: 0 10px 24px rgba(17, 19, 26, 0.08);
+      outline: none;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    .url {
+      color: var(--muted);
+      font-size: 0.92rem;
+      word-break: break-all;
+      text-align: right;
+    }
+
+    .section-list {
+      margin-top: 1.25rem;
+    }
+
+    .section-list li a {
+      padding-block: 0.9rem;
+    }
+
+    .footer-note {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .backlink {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <span class="eyebrow">Sitemap</span>
+      <h1>Manas Chauhan portfolio sitemap</h1>
+      <p>This sitemap helps search engines discover the homepage and the main sections of the portfolio.</p>
+
+      <ul>
+        <li>
+          <a href="/">
+            <span class="label">Homepage</span>
+            <span class="url">https://manaschauhan.vercel.app/</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about.html">
+            <span class="label">About</span>
+            <span class="url">https://manaschauhan.vercel.app/about.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="/skills.html">
+            <span class="label">Skills</span>
+            <span class="url">https://manaschauhan.vercel.app/skills.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="/projects.html">
+            <span class="label">Projects</span>
+            <span class="url">https://manaschauhan.vercel.app/projects.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact.html">
+            <span class="label">Contact</span>
+            <span class="url">https://manaschauhan.vercel.app/contact.html</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer-note">Return to the <a class="backlink" href="/">homepage</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

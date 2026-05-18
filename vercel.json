@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/maxasop-portfolio.html"
+      "source": "/(.*)",
+      "destination": "/api/index.js"
     }
   ]
 }
