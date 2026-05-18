@@ -23,12 +23,12 @@ module.exports = (req, res) => {
     };
 
     const filename = map[urlPath] || 'maxasop-portfolio.html';
-    const filePath = path.join(__dirname, '..', filename);
+    const filePath = path.join(process.cwd(), filename);
 
     if (!fs.existsSync(filePath)) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-      res.end('Not found');
+      res.end(`Not found: ${filename}`);
       return;
     }
 
