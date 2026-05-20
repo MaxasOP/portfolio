@@ -116,6 +116,23 @@
       width: min(var(--maxw), calc(100% - 2rem));
       margin: 0 auto;
     }
+
+    .hero-grid > *,
+    .grid-2 > *,
+    .skills-grid > *,
+    .project-grid > *,
+    .contact-panel > *,
+    .hero-copy,
+    .hero-stack,
+    .panel,
+    .story-card,
+    .timeline,
+    .skill-card,
+    .project,
+    .contact-panel {
+      min-width: 0;
+    }
+
     footer .container { text-align: center; }
 
     .scrollbar {
@@ -512,6 +529,8 @@
       text-align: right;
       max-width: 70%;
       line-height: 1.35;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .hero-stats {
@@ -862,6 +881,19 @@
       font-size: 0.93rem;
     }
 
+    .hero-lead,
+    .section-copy,
+    .panel-copy,
+    .story-card p,
+    .timeline p,
+    .skill-card p,
+    .project p,
+    .contact-copy,
+    .contact-links strong {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
     .tag-row {
       display: flex;
       flex-wrap: wrap;
@@ -1063,6 +1095,11 @@
     @media (max-width: 720px) {
       body {
         padding: 16px;
+      }
+
+      .ticker,
+      .ticker-track {
+        display: none;
       }
 
       section {
@@ -1430,6 +1467,11 @@
     @media (max-width: 480px) {
       body {
         padding: 12px;
+      }
+
+      .ticker,
+      .ticker-track {
+        display: none;
       }
 
       .logo {
