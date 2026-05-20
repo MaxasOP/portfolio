@@ -997,6 +997,93 @@
       transform: translateY(0);
     }
 
+    .explore-section {
+      padding: 3rem 0;
+      background: radial-gradient(800px 300px at 95% 60%, rgba(36, 87, 255, 0.08), transparent 52%);
+      border-top: 1px solid rgba(17, 19, 26, 0.08);
+      border-bottom: 1px solid rgba(17, 19, 26, 0.08);
+    }
+
+    .explore-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .explore-header .eyebrow {
+      justify-content: center;
+      display: inline-flex;
+    }
+
+    .explore-title {
+      margin: 0.5rem 0 0.5rem;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+
+    .explore-copy {
+      color: var(--muted);
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .explore-card {
+      padding: 1.2rem;
+      border: 1px solid rgba(17, 19, 26, 0.12);
+      border-radius: 1.2rem;
+      background: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(17, 19, 26, 0.18);
+      box-shadow: 0 18px 40px rgba(17, 19, 26, 0.08);
+    }
+
+    .explore-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .explore-card-about .explore-label {
+      color: var(--accent);
+    }
+
+    .explore-card-skills .explore-label {
+      color: var(--accent-2);
+    }
+
+    .explore-card-work .explore-label {
+      color: #0f9d73;
+    }
+
+    .explore-card-contact .explore-label {
+      color: #1c2030;
+    }
+
+    .explore-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .explore-card-copy {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
     @keyframes ticker {
       from {
         transform: translateX(0);
@@ -1013,14 +1100,14 @@
       .contact-panel,
       .project.featured {
         grid-template-columns: 1fr;
+      }
 
-            #explore {
-              padding: 2.5rem 0 !important;
-            }
+      .explore-section {
+        padding: 2.5rem 0;
+      }
 
-            #explore [style*="grid-template-columns"] {
-              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-            }
+      .explore-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       }
 
       .principles {
@@ -1071,25 +1158,25 @@
     @media (max-width: 720px) {
       body {
         padding: 16px;
+      }
 
-            #explore {
-              padding: 2rem 0 !important;
-              border-top: none !important;
-              border-bottom: none !important;
-            }
+      .explore-section {
+        padding: 2rem 0;
+        border-top: none;
+        border-bottom: none;
+      }
 
-            #explore [style*="text-align"] {
-              margin-bottom: 1.5rem;
-            }
+      .explore-header {
+        margin-bottom: 1.5rem;
+      }
 
-            #explore [style*="grid-template-columns"] {
-              grid-template-columns: 1fr !important;
-              gap: 0.8rem !important;
-            }
+      .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
 
-            #explore a[style*="padding"] {
-              padding: 1rem !important;
-            }
+      .explore-card {
+        padding: 1rem;
       }
 
       section {
@@ -1457,27 +1544,26 @@
     @media (max-width: 480px) {
       body {
         padding: 12px;
+      }
 
-            #explore {
-              padding: 1.5rem 1rem !important;
-            }
+      .explore-section {
+        padding: 1.5rem 1rem;
+      }
 
-            #explore [style*="text-align"] {
-              margin-bottom: 1.2rem;
-            }
+      .explore-header {
+        margin-bottom: 1.2rem;
+      }
 
-            #explore [style*="grid-template-columns"] {
-              grid-template-columns: 1fr !important;
-              gap: 0.6rem !important;
-            }
+      .explore-grid {
+        gap: 0.6rem;
+      }
 
-            #explore a[style*="padding"] {
-              padding: 0.9rem !important;
-            }
+      .explore-card {
+        padding: 0.9rem;
+      }
 
-            #explore a [style*="font-size"] {
-              font-size: 0.65rem !important;
-            }
+      .explore-label {
+        font-size: 0.65rem;
       }
 
       .logo {
@@ -1974,37 +2060,37 @@
       </div>
     </section>
 
-    <section id="explore" style="padding: 3rem 0; background: radial-gradient(800px 300px at 95% 60%, rgba(36,87,255,0.08), transparent 52%); border-top: 1px solid rgba(17,19,26,0.08); border-bottom: 1px solid rgba(17,19,26,0.08);">
+    <section id="explore" class="explore-section">
       <div class="container">
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <span class="eyebrow" style="justify-content: center; display: inline-flex;">Explore more</span>
-          <h2 class="section-title" style="margin: 0.5rem 0 0.5rem; font-size: clamp(1.6rem, 5vw, 2.2rem);">Your next move</h2>
-          <p style="color: var(--muted); max-width: 50ch; margin: 0 auto;">Detailed insights, work samples, and ways to get in touch—all organized for easy discovery.</p>
+        <div class="explore-header">
+          <span class="eyebrow">Explore more</span>
+          <h2 class="section-title explore-title">Your next move</h2>
+          <p class="explore-copy">Detailed insights, work samples, and ways to get in touch—all organized for easy discovery.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-          <a href="/about.html" style="padding: 1.2rem; border: 1px solid rgba(17,19,26,0.12); border-radius: 1.2rem; background: rgba(255,255,255,0.72); text-decoration: none; color: inherit; transition: all 0.2s;">
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;">About</div>
-            <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Background & principles</div>
-            <div style="font-size: 0.88rem; color: var(--muted);">Timeline, education, and core beliefs.</div>
+        <div class="explore-grid">
+          <a class="explore-card explore-card-about" href="/about.html">
+            <div class="explore-label">About</div>
+            <div class="explore-card-title">Background & principles</div>
+            <div class="explore-card-copy">Timeline, education, and core beliefs.</div>
           </a>
 
-          <a href="/skills.html" style="padding: 1.2rem; border: 1px solid rgba(17,19,26,0.12); border-radius: 1.2rem; background: rgba(255,255,255,0.72); text-decoration: none; color: inherit; transition: all 0.2s;">
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.5rem;">Skills</div>
-            <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Tech & capabilities</div>
-            <div style="font-size: 0.88rem; color: var(--muted);">Frontend, backend, business, execution.</div>
+          <a class="explore-card explore-card-skills" href="/skills.html">
+            <div class="explore-label">Skills</div>
+            <div class="explore-card-title">Tech & capabilities</div>
+            <div class="explore-card-copy">Frontend, backend, business, execution.</div>
           </a>
 
-          <a href="/projects.html" style="padding: 1.2rem; border: 1px solid rgba(17,19,26,0.12); border-radius: 1.2rem; background: rgba(255,255,255,0.72); text-decoration: none; color: inherit; transition: all 0.2s;">
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0f9d73; margin-bottom: 0.5rem;">Work</div>
-            <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Selected projects</div>
-            <div style="font-size: 0.88rem; color: var(--muted);">Featured builds and technical work.</div>
+          <a class="explore-card explore-card-work" href="/projects.html">
+            <div class="explore-label">Work</div>
+            <div class="explore-card-title">Selected projects</div>
+            <div class="explore-card-copy">Featured builds and technical work.</div>
           </a>
 
-          <a href="/contact.html" style="padding: 1.2rem; border: 1px solid rgba(17,19,26,0.12); border-radius: 1.2rem; background: rgba(255,255,255,0.72); text-decoration: none; color: inherit; transition: all 0.2s;">
-            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #1c2030; margin-bottom: 0.5rem;">Contact</div>
-            <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;">Let's connect</div>
-            <div style="font-size: 0.88rem; color: var(--muted);">Email, socials, and collaboration info.</div>
+          <a class="explore-card explore-card-contact" href="/contact.html">
+            <div class="explore-label">Contact</div>
+            <div class="explore-card-title">Let's connect</div>
+            <div class="explore-card-copy">Email, socials, and collaboration info.</div>
           </a>
         </div>
       </div>
