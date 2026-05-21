@@ -77,8 +77,10 @@ export function initSuperMaxas() {
   // Keep track of listeners to remove them on cleanup
   const listeners = [];
 
-  document.querySelectorAll(".interactive, .tilt").forEach((node) => {
-    // Keep CSS-driven/tap effects responsive, but avoid mousemove tilt on touch/coarse devices.
+  // Only apply mousemove tilt to explicit tilt targets.
+  // This prevents the entire game scene (which uses .scene.interactive for layout/background animation)
+  // from getting its transform overwritten on hover.
+  document.querySelectorAll(".tilt").forEach((node) => {
     if (!isTouch) {
       const handleMouseMove = (event) => {
         const rect = node.getBoundingClientRect();
@@ -105,6 +107,7 @@ export function initSuperMaxas() {
       );
     }
   });
+
 
   const handleScroll = () => {
     updateScrollBar();

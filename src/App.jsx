@@ -7,25 +7,12 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Nav from './components/Nav'
-import { initSuperMaxas } from './lib/super-maxas'
-
-function RouterSync() {
-  const location = useLocation()
-  useEffect(() => {
-    // re-run legacy DOM wiring after route changes
-    const cleanup = initSuperMaxas()
-    // clean up listeners on component unmount
-    return cleanup
-  }, [location.pathname])
-  return null
-}
-
 export default function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <RouterSync />
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
