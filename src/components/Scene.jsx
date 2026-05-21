@@ -1,12 +1,12 @@
 import React from 'react'
 import '../styles/scene.css'
 
+import clouds from '../assets/clouds.svg'
+import flag from '../assets/flag.svg'
+import hero from '../assets/hero.png'
+
 export default function Scene() {
-  // Use runtime asset paths so missing images do not break the dev server.
-  // Prefer vector placeholders so the scene renders while real pixel PNGs are added
-  const clouds = '/src/assets/clouds.svg'
-  const flag = '/src/assets/flag.svg'
-  const hero = '/src/assets/hero.png'
+  // Importing assets ensures Vite/bundlers resolve correct runtime paths
 
   return (
     <aside className="scene-shell reveal tilt" aria-label="Game world preview">
@@ -16,7 +16,7 @@ export default function Scene() {
       </div>
       <div className="scene interactive">
         <div className="scene-grid"></div>
-        {/* Cloud artwork: drop-in bitmap if present at /src/assets/clouds.png */}
+        {/* Cloud artwork: imported from src/assets so bundler serves it correctly */}
         <img src={clouds} className="cloud one" alt="clouds" />
         <img src={clouds} className="cloud two" alt="clouds" />
         <div className="hill one"></div>
