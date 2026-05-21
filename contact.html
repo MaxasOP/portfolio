@@ -3,145 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact — Manas Chauhan. Let's talk about your next project or idea.">
-  <meta name="theme-color" content="#2457ff">
+  <meta name="description" content="Super Maxas contact page - get in touch through the warp pipe.">
+  <meta name="theme-color" content="#e53935">
   <meta name="google-site-verification" content="VCBmtD7GlhFh-NGe_74Lz9iO0vcnGW3AXmlqJtr9aYY" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://manaschauhan.vercel.app/contact.html">
-  <title>Contact — Manas Chauhan</title>
+  <title>Super Maxas | Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {--bg:#f4f1eb;--surface:rgba(255,255,255,0.76);--ink:#11131a;--muted:#5e6370;--line:rgba(17,19,26,0.12);--accent:#2457ff;--accent-2:#0f9d73;--shadow:0 24px 55px rgba(17,19,26,0.08);--shadow-lift:10px 10px 0 rgba(17,19,26,0.08);--maxw:1200px;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;scroll-padding-top:5rem;}
-    body{font-family:"Instrument Sans",sans-serif;color:var(--ink);background:radial-gradient(800px 500px at 95% 8%,rgba(36,87,255,0.14),transparent 52%),radial-gradient(600px 420px at 10% 18%,rgba(15,157,115,0.1),transparent 54%),linear-gradient(180deg,#f7f5ef 0%,#ede8de 100%);line-height:1.6;position:relative;}
-    main,nav,footer{position:relative;z-index:1;}
-    .container{width:min(var(--maxw),calc(100% - 2rem));margin:0 auto;}
-    footer .container{text-align:center;}
-    nav{position:sticky;top:0;backdrop-filter:blur(18px);background:rgba(247,244,236,0.78);border-bottom:1px solid rgba(17,19,26,0.08);z-index:40;}
-    .nav-wrap{width:min(var(--maxw),calc(100% - 2rem));margin:0 auto;min-height:4.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0;}
-    .logo{display:inline-flex;align-items:center;gap:0.85rem;text-decoration:none;white-space:nowrap;}
-    .logo-mark{width:2.45rem;height:2.45rem;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;border:1px solid var(--ink);box-shadow:var(--shadow-lift);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:0.75rem;}
-    .logo-copy{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1rem;}
-    .nav-actions{display:flex;align-items:center;gap:0.8rem;}
-    .nav-links{display:flex;align-items:center;gap:1rem;list-style:none;padding:0.65rem 0.9rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,0.7);}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.79rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
-    .nav-cta{text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:0.72rem 1rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;box-shadow:var(--shadow-lift);transition:transform 0.2s;}
-    .nav-cta:hover{transform:translateY(-2px);}
-    .menu-btn{display:none;border:1px solid var(--line);background:rgba(255,255,255,0.72);color:var(--ink);border-radius:999px;padding:0.72rem 0.95rem;font-size:0.78rem;font-weight:700;text-transform:uppercase;cursor:pointer;}
-    main{padding:3rem 0;}
-    section{padding:2rem 0;}
-    .section-head{display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
-    .section-index{flex:0 0 auto;width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,0.72);display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-size:0.8rem;font-weight:700;box-shadow:var(--shadow-lift);}
-    .section-title-group{max-width:52rem;}
-    .eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-family:"Space Grotesk",sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
-    .eyebrow::before{content:"";width:2rem;height:1px;background:currentColor;opacity:0.55;}
-    .section-title{font-family:"Fraunces",serif;font-size:clamp(1.8rem,5vw,3.3rem);line-height:1;letter-spacing:-0.05em;margin-top:0.35rem;margin-bottom:0.5rem;}
-    .section-copy{max-width:50ch;color:var(--muted);font-size:0.95rem;}
-    .contact-wrapper{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem;}
-    .contact-card{padding:1.5rem;border:1px solid var(--line);border-radius:1.35rem;background:rgba(255,255,255,0.78);}
-    .contact-card h3{font-size:1rem;margin-bottom:0.5rem;}
-    .contact-card p{font-size:0.9rem;color:var(--muted);margin-bottom:0.8rem;}
-    .contact-link{text-decoration:none;display:inline-flex;align-items:center;color:var(--accent);font-family:"Space Grotesk",sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:transform 0.2s;border-radius:0.35rem;}
-    .contact-link:hover{transform:translateX(2px);}
-    .contact-link::after{content:" →";margin-left:0.4rem;}
-    footer{border-top:1px solid rgba(17,19,26,0.08);padding:1.5rem 0 2rem;color:var(--muted);font-size:0.82rem;margin-top:2rem;}
-    footer a{text-decoration:none;border-bottom:1px solid currentColor;}
-    footer a:hover{color:var(--ink);}
-    @media (max-width:768px){.nav-links{position:absolute;top:calc(100% + 0.7rem);right:0;display:none;flex-direction:column;gap:0.4rem;width:min(18rem,calc(100vw - 2rem));padding:0.8rem;border-radius:1rem;background:rgba(255,255,255,0.96);box-shadow:var(--shadow);}.nav-links.open{display:flex;}.nav-links a{display:block;padding:0.45rem 0.25rem;}.menu-btn{display:inline-flex;}.nav-cta{display:none;}main{padding:2rem 0;}section{padding:1.5rem 0;}.section-head{flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;}.section-index{width:2.5rem;height:2.5rem;font-size:0.7rem;}.section-title{font-size:clamp(1.4rem,5vw,2.2rem);}.contact-wrapper{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;}.contact-card{padding:1rem;}.contact-card h3{font-size:0.95rem;margin-bottom:0.4rem;}.contact-card p{font-size:0.82rem;margin-bottom:0.6rem;}.contact-link{font-size:0.76rem;}footer{padding:1rem 0 1.5rem;font-size:0.76rem;}}
-    @media (max-width:480px){.nav-wrap{min-height:3.5rem;padding:0 0.75rem;}.logo{gap:0.5rem;font-size:0.85rem;}.logo-mark{width:2rem;height:2rem;font-size:0.65rem;}main{padding:1.5rem 1rem;}section{padding:1rem 0;}.container{width:calc(100% - 1rem);}.section-head{gap:0.5rem;}.section-index{width:2rem;height:2rem;font-size:0.65rem;}.section-title{font-size:clamp(1.2rem,4vw,1.8rem);}.section-copy{font-size:0.85rem;}.contact-wrapper{grid-template-columns:1fr;gap:1rem;margin-top:1rem;}.contact-card{padding:1rem;}.contact-card h3{font-size:0.88rem;margin-bottom:0.35rem;}.contact-card p{font-size:0.78rem;margin-bottom:0.5rem;}.contact-link{font-size:0.72rem;}footer{padding:0.8rem 1rem 1.2rem;font-size:0.7rem;}.eyebrow::before{width:1.2rem;}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/super-maxas.css">
 </head>
-<body>
+<body class="shell" data-page="contact">
+  <div class="skyline" aria-hidden="true"></div>
+  <div class="scrollbar" aria-hidden="true"></div>
+
   <nav>
     <div class="nav-wrap">
-      <a class="logo" href="/" aria-label="Manas Chauhan home">
-        <span class="logo-mark">MC</span>
-        <span class="logo-copy">Manas Chauhan</span>
+      <a class="brand" href="/" aria-label="Super Maxas home">
+        <span class="brand-mark">MX</span>
+        <span class="brand-copy">
+          <strong>Super Maxas</strong>
+          <span>Pixel quest portfolio</span>
+        </span>
       </a>
+
       <div class="nav-actions">
         <ul class="nav-links" id="navLinks">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/skills.html">Skills</a></li>
-          <li><a href="/projects.html">Work</a></li>
-          <li><a href="/contact.html" class="active">Contact</a></li>
+          <li><a href="/" data-route="home">Home</a></li>
+          <li><a href="/about.html" data-route="about">About</a></li>
+          <li><a href="/skills.html" data-route="skills">Skills</a></li>
+          <li><a href="/projects.html" data-route="projects">Work</a></li>
+          <li><a href="/contact.html" data-route="contact">Contact</a></li>
         </ul>
-        <a class="nav-cta" href="/contact.html">Available now</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">Menu</button>
+        <a class="nav-cta" href="mailto:manaschauhan.ms@gmail.com">Start quest</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">Menu</button>
       </div>
     </div>
   </nav>
 
   <main>
-    <div class="container">
-      <section id="contact">
-        <div class="section-head">
-          <div class="section-index">04</div>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">World 1-5 / Warp pipe</div>
+          <h1 class="hero-title">Need a sharper build? <span class="accent">Let's launch it.</span></h1>
+          <p class="hero-lead">Open for internships, collaborations, and product-focused UI work where taste and execution both matter. If you have a better route, I want to hear it.</p>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:manaschauhan.ms@gmail.com">Email me</a>
+            <a class="button alt" href="https://github.com/MaxasOP" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Available now</span>
+            <span class="badge">Quick response</span>
+            <span class="badge">Collaboration friendly</span>
+          </div>
+          <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+              <div class="marquee-group">
+                <span>Email</span>
+                <span>LinkedIn</span>
+                <span>GitHub</span>
+                <span>Project brief</span>
+              </div>
+              <div class="marquee-group" aria-hidden="true">
+                <span>Email</span>
+                <span>LinkedIn</span>
+                <span>GitHub</span>
+                <span>Project brief</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="scene-shell interactive reveal" aria-label="Contact warp zone">
+          <div class="scene" style="min-height: 24rem;">
+            <div class="scene-grid" aria-hidden="true"></div>
+            <div class="cloud one"></div>
+            <div class="cloud two"></div>
+            <div class="coin one"></div>
+            <div class="coin two"></div>
+            <div class="star" style="left: 14%; top: 7rem;"></div>
+            <div class="block-run" style="left: 11%; bottom: 11.2rem;">
+              <div class="block"></div>
+              <div class="block question"></div>
+              <div class="block"></div>
+            </div>
+            <div class="pipe"></div>
+            <div class="hero-sprite" style="left: 6.5rem; bottom: 5.5rem;"></div>
+            <div class="ground"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index">01</div>
           <div class="section-title-group">
-            <span class="eyebrow">Contact</span>
-            <h1 class="section-title">Let's talk about your next idea.</h1>
-            <p class="section-copy">I'm currently available for partnerships, projects, or conversations about design, product, or code. Find me where you're most comfortable.</p>
+            <div class="eyebrow">Contact routes</div>
+            <h2 class="section-title">Pick the pipe that fits the mission.</h2>
+            <p class="section-copy">The fastest route is email, but the rest of the profile is here if you want to inspect the save file first.</p>
           </div>
         </div>
 
-        <div class="contact-wrapper">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>Direct message for proposals or quick questions.</p>
-            <a class="contact-link" href="mailto:manaschauhan71@gmail.com">Send email</a>
-          </div>
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <div class="kicker">Primary route</div>
+            <strong>Email</strong>
+            <p>Use this for proposals, collaborations, internships, and direct project conversations.</p>
+            <div class="contact-links">
+              <a href="mailto:manaschauhan.ms@gmail.com">
+                <div>
+                  <span>Launch</span>
+                  <strong>manaschauhan.ms@gmail.com</strong>
+                </div>
+                <span>Reply</span>
+              </a>
+            </div>
+          </article>
 
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <p>Professional profile and work history.</p>
-            <a class="contact-link" href="https://www.linkedin.com/in/maxasop/" target="_blank" rel="noreferrer">Connect</a>
-          </div>
+          <article class="contact-card reveal">
+            <div class="kicker">Profile trail</div>
+            <strong>GitHub</strong>
+            <p>Browse the repositories, experiments, and code behind the visual direction.</p>
+            <div class="contact-links">
+              <a href="https://github.com/MaxasOP" target="_blank" rel="noreferrer">
+                <div>
+                  <span>Open</span>
+                  <strong>github.com/MaxasOP</strong>
+                </div>
+                <span>Inspect</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <p>Code repositories and technical projects.</p>
-            <a class="contact-link" href="https://github.com/MaxasOP" target="_blank" rel="noreferrer">Explore</a>
+    <section>
+      <div class="container two-col">
+        <div class="reveal">
+          <div class="section-head">
+            <div class="section-index">02</div>
+            <div class="section-title-group">
+              <div class="eyebrow">What to send</div>
+              <h2 class="section-title">A short brief is enough.</h2>
+              <p class="section-copy">If you are reaching out, include the objective, timeline, and the kind of help you need. I can take it from there.</p>
+            </div>
           </div>
-
-          <div class="contact-card">
-            <h3>Twitter / X</h3>
-            <p>Thoughts on design, product, and building.</p>
-            <a class="contact-link" href="https://twitter.com/maxasop" target="_blank" rel="noreferrer">Follow</a>
-          </div>
-
-          <div class="contact-card">
-            <h3>Discord</h3>
-            <p>More casual conversations and community.</p>
-            <a class="contact-link" href="https://discordapp.com/users/maxasop" target="_blank" rel="noreferrer">Message</a>
-          </div>
-
-          <div class="contact-card">
-            <h3>Instagram</h3>
-            <p>Visual share of work and life updates.</p>
-            <a class="contact-link" href="https://instagram.com/maxasop" target="_blank" rel="noreferrer">Follow</a>
+          <div class="story-card card">
+            <p>I respond best to projects that have a clear problem to solve. The more specific the ask, the faster I can see where I can help.</p>
+            <p>Whether it is a portfolio refresh, landing page, or product UI pass, the goal is to make the result feel intentional and useful.</p>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div class="reveal">
+          <div class="section-head">
+            <div class="section-index">03</div>
+            <div class="section-title-group">
+              <div class="eyebrow">Open slots</div>
+              <h2 class="section-title">What I am open to right now.</h2>
+              <p class="section-copy">The strongest fit is frontend-focused work with room for motion, layout discipline, and product thinking.</p>
+            </div>
+          </div>
+          <div class="orbital">
+            <div class="mini-card">
+              <span>01</span>
+              <strong>Internships</strong>
+              <p class="contact-copy">Frontend or product-oriented opportunities.</p>
+            </div>
+            <div class="mini-card">
+              <span>02</span>
+              <strong>Collaborations</strong>
+              <p class="contact-copy">Freelance or team projects with a clear scope.</p>
+            </div>
+            <div class="mini-card">
+              <span>03</span>
+              <strong>UI refreshes</strong>
+              <p class="contact-copy">Pages that need a stronger visual voice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">2026 Manas Chauhan</div>
+    <div class="container">Super Maxas - <a href="mailto:manaschauhan.ms@gmail.com">manaschauhan.ms@gmail.com</a></div>
   </footer>
 
-  <script>
-    const navLinks = document.getElementById("navLinks");
-    const menuBtn = document.getElementById("menuBtn");
-    function closeMenu() {navLinks.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}
-    function toggleMenu() {const isOpen = navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(isOpen));}
-    menuBtn.addEventListener("click",toggleMenu);
-    navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
-    document.addEventListener("keydown",(e)=>{if(e.key==="Escape")closeMenu();});
-    window.addEventListener("resize",()=>{if(window.innerWidth>768)closeMenu();});
-  </script>
+  <script src="/super-maxas.js"></script>
 </body>
 </html>
