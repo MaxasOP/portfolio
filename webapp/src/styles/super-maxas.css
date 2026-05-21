@@ -1,0 +1,27 @@
+:root {
+  --sky-1: #74d7ff;
+  --nav-height: 4.9rem;
+  --sky-2: #ffd37e;
+  --sky-3: #fff5c8;
+  --night: #10213a;
+  --panel: rgba(255, 251, 241, 0.9);
+  --panel-strong: #fff7e4;
+  --ink: #1b1a18;
+  --muted: #5e544b;
+  --line: rgba(27, 26, 24, 0.18);
+  --line-strong: rgba(27, 26, 24, 0.34);
+  --red: #e53935;
+  --red-deep: #b31f24;
+  --green: #2ca34d;
+  --green-deep: #14622b;
+  --brick: #c85c3d;
+  --coin: #ffd54a;
+  --star: #fff7a6;
+  --cloud: #f8fbff;
+  --shadow: 0 22px 0 rgba(27, 26, 24, 0.18);
+  --shadow-soft: 0 18px 42px rgba(27, 26, 24, 0.16);
+  --maxw: 1200px;
+  --pointer-x: 50%;
+  --pointer-y: 20%;
+}
+/* trimmed: full CSS exists in legacy/super-maxas.css */

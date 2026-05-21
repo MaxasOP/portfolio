@@ -1,0 +1,75 @@
+:root {
+  --sky-1: #74d7ff;
+  --nav-height: 4.9rem;
+  --sky-2: #ffd37e;
+  --sky-3: #fff5c8;
+  --night: #10213a;
+  --panel: rgba(255, 251, 241, 0.9);
+  --panel-strong: #fff7e4;
+  --ink: #1b1a18;
+  --muted: #5e544b;
+  --line: rgba(27, 26, 24, 0.18);
+  --line-strong: rgba(27, 26, 24, 0.34);
+  --red: #e53935;
+  --red-deep: #b31f24;
+  --green: #2ca34d;
+  --green-deep: #14622b;
+  --brick: #c85c3d;
+  --coin: #ffd54a;
+  --star: #fff7a6;
+  --cloud: #f8fbff;
+  --shadow: 0 22px 0 rgba(27, 26, 24, 0.18);
+  --shadow-soft: 0 18px 42px rgba(27, 26, 24, 0.16);
+  --maxw: 1200px;
+  --pointer-x: 50%;
+  --pointer-y: 20%;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  background:
+    radial-gradient(1200px 700px at 15% 8%, rgba(255, 211, 126, 0.72), transparent 50%),
+    radial-gradient(900px 640px at 84% 18%, rgba(116, 215, 255, 0.52), transparent 42%),
+    linear-gradient(180deg, #7edcff 0%, #9adfff 24%, #d2f2ff 52%, #fff4d2 100%);
+  overflow-x: hidden;
+  position: relative;
+}
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+body::before {
+  background-image:
+    linear-gradient(rgba(27, 26, 24, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 26, 24, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+}
+body::after {
+  background:
+    radial-gradient(280px 180px at 14% 14%, rgba(255, 255, 255, 0.52), transparent 60%),
+    radial-gradient(240px 160px at 84% 10%, rgba(255, 255, 255, 0.42), transparent 60%),
+    radial-gradient(760px 460px at var(--pointer-x) var(--pointer-y), rgba(255, 255, 255, 0.16), transparent 58%);
+}
+main, nav, footer { position: relative; z-index: 1; }
+a, button { font: inherit; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+::selection { background: rgba(229, 57, 53, 0.22); }
+:focus-visible { outline: 3px solid rgba(255, 213, 74, 0.95); outline-offset: 3px; }
+.container { width: min(var(--maxw), calc(100% - 2rem)); margin: 0 auto; }
+.shell { position: relative; overflow: hidden; }
+.skyline {
+  position: fixed; inset: 0 0 auto; height: 42vh; pointer-events: none; z-index: 0; opacity: 0.95;
+}
+/* truncated for brevity in legacy copy */

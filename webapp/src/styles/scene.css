@@ -1,0 +1,37 @@
+.scene.interactive img,
+.scene.interactive .hero-sprite,
+.scene.interactive .flag,
+.scene .cloud {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.scene.interactive .cloud.one,
+.scene.interactive .cloud.two {
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  width: 9rem;
+  opacity: 0.95;
+}
+
+.scene.interactive .cloud.two { left: 6.6rem; top: 1.2rem; width: 7.2rem; }
+
+.scene.interactive .flag {
+  position: absolute;
+  right: 1rem;
+  bottom: 2.6rem;
+  width: 4rem;
+  height: auto;
+}
+
+.scene.interactive .hero-sprite {
+  position: absolute;
+  left: 3.2rem;
+  bottom: 2.4rem;
+  width: 3.2rem;
+  height: auto;
+}
+
+/* Ensure fallback visuals remain workable if images are missing */
+.scene.interactive img[onerror] { opacity: 0.9; }
