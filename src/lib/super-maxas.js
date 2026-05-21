@@ -74,10 +74,13 @@ export function initSuperMaxas() {
     prefersCoarsePointer ||
     ("ontouchstart" in window && navigator.maxTouchPoints > 0);
 
+  // Keep track of listeners to remove them on cleanup
+  const listeners = [];
+
   document.querySelectorAll(".interactive, .tilt").forEach((node) => {
     // Keep CSS-driven/tap effects responsive, but avoid mousemove tilt on touch/coarse devices.
     if (!isTouch) {
-      node.addEventListener("mousemove", (event) => {
+      const handleMouseMove = (event) => {
         const rect = node.getBoundingClientRect();
         const pointerX = ((event.clientX - rect.left) / rect.width) * 100;
         const pointerY = ((event.clientY - rect.top) / rect.height) * 100;
@@ -88,14 +91,36 @@ export function initSuperMaxas() {
         const rotateY = (pointerX - 50) / 10;
         const rotateX = (50 - pointerY) / 10;
         node.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-      });
-      node.addEventListener("mouseleave", () => {
+      };
+
+      const handleMouseLeave = () => {
         node.style.transform = "";
-      });
+      };
+
+      node.addEventListener("mousemove", handleMouseMove);
+      node.addEventListener("mouseleave", handleMouseLeave);
+      listeners.push(
+        { node, type: "mousemove", handler: handleMouseMove },
+        { node, type: "mouseleave", handler: handleMouseLeave }
+      );
     }
   });
 
+  const handleScroll = () => {
+    updateScrollBar();
+  };
 
-  window.addEventListener("scroll", () => { updateScrollBar(); });
+  window.addEventListener("scroll", handleScroll);
+  listeners.push({ node: window, type: "scroll", handler: handleScroll });
+
   updateScrollBar();
+
+  // Return a cleanup function to remove all listeners
+  return () => {
+    listeners.forEach(({ node, type, handler }) => {
+      node.removeEventListener(type, handler);
+    });
+    revealObserver.disconnect();
+    if (menuBtn) menuBtn.removeEventListener("click", toggleMenu);
+  };
 }

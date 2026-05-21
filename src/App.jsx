@@ -13,7 +13,9 @@ function RouterSync() {
   const location = useLocation()
   useEffect(() => {
     // re-run legacy DOM wiring after route changes
-    initSuperMaxas()
+    const cleanup = initSuperMaxas()
+    // clean up listeners on component unmount
+    return cleanup
   }, [location.pathname])
   return null
 }
