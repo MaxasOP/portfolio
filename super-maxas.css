@@ -465,6 +465,38 @@ footer .container { text-align: center; }
   .marquee-group span { font-size: 0.3rem; }
   footer { font-size: 0.76rem; }
 }
+
+/* Mobile-first polish: ensure single-column flows, bigger tap targets, reduced motion */
+@media (max-width: 900px) {
+  .container, .nav-wrap { width: calc(100% - 1rem); }
+  .hero-grid, .scene-grid-2, .two-col { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(1.8rem, 8.8vw, 3.6rem); }
+  .hero-lead { font-size: 0.98rem; }
+  .nav-links { right: 0; width: min(100%, calc(100vw - 2rem)); padding: 0.65rem; }
+  .nav-links a { padding: 0.9rem 1rem; font-size: 0.46rem; }
+  .menu-btn { display: inline-flex; }
+  .nav-cta { display: none; }
+  .scene { min-height: 22rem; }
+  .scene, .scene * { image-rendering: pixelated; }
+  .card, .project, .skill-card, .contact-card { padding: 0.9rem; border-width: 3px; }
+  .button, .project-link, .tile-link { padding: 0.9rem; font-size: 0.38rem; }
+  .marquee { border-width: 3px; }
+  /* reduce animation intensity on mobile for battery and focus */
+  @media (prefers-reduced-motion: no-preference) {
+    .cloud { animation-duration: 12s; }
+    .coin { animation-duration: 2.2s; }
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-title { font-size: clamp(1.6rem, 10vw, 2.8rem); }
+  .hero-lead { font-size: 0.95rem; }
+  .menu-btn { padding: 0.6rem 0.8rem; }
+  .nav-links a { padding: 0.75rem 0.9rem; font-size: 0.44rem; }
+  .scene { min-height: 18.5rem; }
+  .hero { padding-top: 1rem; }
+  .brand-copy strong { font-size: 0.9rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
