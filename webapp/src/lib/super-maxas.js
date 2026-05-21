@@ -69,21 +69,32 @@ export function initSuperMaxas() {
     if (badge) badge.textContent = reducedMotion ? 'super-maxas: reduced-motion' : 'super-maxas: active';
   } catch (e) {}
 
-  document.querySelectorAll(".interactive, .tilt").forEach((node) => {
-    node.addEventListener("mousemove", (event) => {
-      const rect = node.getBoundingClientRect();
-      const pointerX = ((event.clientX - rect.left) / rect.width) * 100;
-      const pointerY = ((event.clientY - rect.top) / rect.height) * 100;
-      node.style.setProperty("--pointer-x", `${pointerX}%`);
-      node.style.setProperty("--pointer-y", `${pointerY}%`);
+  const prefersCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const isTouch =
+    prefersCoarsePointer ||
+    ("ontouchstart" in window && navigator.maxTouchPoints > 0);
 
-      if (reducedMotion) return;
-      const rotateY = (pointerX - 50) / 10;
-      const rotateX = (50 - pointerY) / 10;
-      node.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-    });
-    node.addEventListener("mouseleave", () => { node.style.transform = ""; });
+  document.querySelectorAll(".interactive, .tilt").forEach((node) => {
+    // Keep CSS-driven/tap effects responsive, but avoid mousemove tilt on touch/coarse devices.
+    if (!isTouch) {
+      node.addEventListener("mousemove", (event) => {
+        const rect = node.getBoundingClientRect();
+        const pointerX = ((event.clientX - rect.left) / rect.width) * 100;
+        const pointerY = ((event.clientY - rect.top) / rect.height) * 100;
+        node.style.setProperty("--pointer-x", `${pointerX}%`);
+        node.style.setProperty("--pointer-y", `${pointerY}%`);
+
+        if (reducedMotion) return;
+        const rotateY = (pointerX - 50) / 10;
+        const rotateX = (50 - pointerY) / 10;
+        node.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+      });
+      node.addEventListener("mouseleave", () => {
+        node.style.transform = "";
+      });
+    }
   });
+
 
   window.addEventListener("scroll", () => { updateScrollBar(); });
   updateScrollBar();
