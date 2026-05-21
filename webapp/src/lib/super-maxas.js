@@ -1,10 +1,33 @@
 export function initSuperMaxas() {
   if (typeof document === 'undefined') return;
+  // Debug badge to confirm script execution in the browser
+  try {
+    let badge = document.getElementById('super-maxas-status');
+    if (!badge) {
+      badge = document.createElement('div');
+      badge.id = 'super-maxas-status';
+      badge.style.position = 'fixed';
+      badge.style.right = '12px';
+      badge.style.bottom = '12px';
+      badge.style.padding = '6px 10px';
+      badge.style.background = 'rgba(0,0,0,0.7)';
+      badge.style.color = 'white';
+      badge.style.borderRadius = '6px';
+      badge.style.zIndex = 9999;
+      badge.style.fontSize = '12px';
+      badge.style.fontFamily = 'monospace';
+      badge.textContent = 'super-maxas: initializing...';
+      document.body.appendChild(badge);
+    }
+  } catch (e) {
+    // ignore DOM errors when not mounted
+  }
   const navLinks = document.getElementById("navLinks");
   const menuBtn = document.getElementById("menuBtn");
   const scrollbar = document.querySelector(".scrollbar");
   const sections = [...document.querySelectorAll("main section[id]")];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  console.log('initSuperMaxas: reducedMotion=', reducedMotion);
 
   function closeMenu() {
     if (!navLinks || !menuBtn) return;
@@ -39,6 +62,12 @@ export function initSuperMaxas() {
   }, { threshold: 0.14 });
 
   document.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+
+  // mark initialized
+  try {
+    const badge = document.getElementById('super-maxas-status');
+    if (badge) badge.textContent = reducedMotion ? 'super-maxas: reduced-motion' : 'super-maxas: active';
+  } catch (e) {}
 
   document.querySelectorAll(".interactive, .tilt").forEach((node) => {
     node.addEventListener("mousemove", (event) => {

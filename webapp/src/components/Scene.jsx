@@ -3,8 +3,9 @@ import '../styles/scene.css'
 
 export default function Scene() {
   // Use runtime asset paths so missing images do not break the dev server.
-  const clouds = '/src/assets/clouds.png'
-  const flag = '/src/assets/flag.png'
+  // Prefer vector placeholders so the scene renders while real pixel PNGs are added
+  const clouds = '/src/assets/clouds.svg'
+  const flag = '/src/assets/flag.svg'
   const hero = '/src/assets/hero.png'
 
   return (

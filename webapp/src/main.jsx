@@ -13,8 +13,12 @@ function Root() {
   return <App />
 }
 
-createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+if (!window.__SUPER_MAXAS_ROOT) {
+  window.__SUPER_MAXAS_ROOT = createRoot(container);
+}
+window.__SUPER_MAXAS_ROOT.render(
   <StrictMode>
     <Root />
   </StrictMode>,
-)
+);
