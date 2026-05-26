@@ -429,7 +429,28 @@ footer .container { text-align: center; }
 @keyframes drift { from{transform:translateX(-2%)} to{transform:translateX(2%)} }
 @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 @media (max-width: 1100px) { .hero-grid,.two-col,.project-grid,.skill-grid,.contact-grid,.timeline-grid,.four-col { grid-template-columns: 1fr 1fr; } .scene { min-height: 28rem; } }
-@media (max-width: 900px) { .hero-title { font-size: clamp(2rem, 8.6vw, 3.6rem); } .hero { padding-top: 1.6rem; } }
+
+/* Mobile-first polish: ensure single-column flows, tighter type, bigger tap targets */
+@media (max-width: 900px) {
+  .container, .nav-wrap { width: calc(100% - 1rem); }
+  .hero-grid, .scene-grid-2, .two-col { grid-template-columns: 1fr; }
+  .hero { padding-top: 1.6rem; }
+  .hero-title { font-size: clamp(1.9rem, 9vw, 3.4rem); }
+  .hero-lead { font-size: 0.98rem; }
+  .nav-links { right: 0; width: min(100%, calc(100vw - 2rem)); padding: 0.65rem; }
+  .nav-links a { padding: 0.9rem 1rem; font-size: 0.46rem; }
+  .scene { min-height: 22rem; }
+  .scene, .scene * { image-rendering: pixelated; }
+  .card, .project, .skill-card, .contact-card { padding: 0.9rem; border-width: 3px; }
+  .button, .project-link, .tile-link { padding: 0.9rem; font-size: 0.38rem; }
+  .marquee { border-width: 3px; }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .cloud { animation-duration: 12s; }
+  .coin { animation-duration: 2.2s; }
+}
+
 @media (max-width: 860px) {
   .nav-wrap { min-height: 4.4rem; }
   .nav-links { position: absolute; top: calc(100% + 0.8rem); right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0.35rem; width: min(19rem, calc(100vw - 2rem)); padding: 0.75rem; border-radius: 1rem; box-shadow: 0 8px 0 rgba(27, 26, 24, 0.7); }
@@ -437,7 +458,7 @@ footer .container { text-align: center; }
   .nav-links a { width: 100%; justify-content: flex-start; }
   .menu-btn { display: inline-flex; }
   .nav-cta { display: none; }
-  .hero { min-height: auto; padding-top: 2rem; }
+  .hero { min-height: auto; padding-top: 1.6rem; }
   .hero-grid,.two-col,.project-grid,.skill-grid,.contact-grid,.timeline-grid,.four-col,.scene-grid-2,.metric-grid,.orbital { grid-template-columns: 1fr; }
   .scene,.scene-shell { min-height: auto; }
   .hero-title { max-width: 8ch; }
@@ -446,56 +467,33 @@ footer .container { text-align: center; }
   body { background: linear-gradient(180deg, #7edcff 0%, #a6ecff 34%, #fff2c2 100%); }
   .container,.nav-wrap { width: calc(100% - 1rem); }
   .brand { gap: 0.55rem; }
-  .brand-mark { width: 2.3rem; height: 2.3rem; font-size: 0.36rem; }
-  .brand-copy strong { font-size: 0.86rem; }
-  .brand-copy span { font-size: 0.62rem; }
-  .section-head { gap: 0.7rem; }
-  .section-index { width: 2.4rem; height: 2.4rem; font-size: 0.42rem; }
-  .hero-title { font-size: clamp(2.7rem, 18vw, 4.4rem); }
-  .section-title { font-size: clamp(1.5rem, 9vw, 2.4rem); }
-  .hero-lead,.section-copy,.card p,.timeline-item p,.contact-copy,.tile-copy,.project p { font-size: 0.94rem; }
-  .button,.link-button,.project-link,.tile-link,.nav-cta,.menu-btn { padding: 0.8rem 0.85rem; font-size: 0.36rem; }
-  .badge,.chip,.stat,.game-stat,.tag,.level-chip { font-size: 0.32rem; }
-  .scene { min-height: 24rem; }
-  .pipe { width: 6.4rem; height: 6rem; }
-  .hero-sprite { left: 4.8rem; width: 4.8rem; height: 6.1rem; }
-  .cloud { width: 5.8rem; }
+  .brand-mark { width: 2.2rem; height: 2.2rem; font-size: 0.34rem; }
+  .brand-copy strong { font-size: 0.82rem; }
+  .brand-copy span { font-size: 0.58rem; }
+  .section-head { gap: 0.6rem; }
+  .section-index { width: 2.2rem; height: 2.2rem; font-size: 0.4rem; }
+  .hero-title { font-size: clamp(1.9rem, 13vw, 3.2rem); }
+  .section-title { font-size: clamp(1.35rem, 8vw, 2.1rem); }
+  .hero-lead,.section-copy,.card p,.timeline-item p,.contact-copy,.tile-copy,.project p { font-size: 0.92rem; }
+  .button,.link-button,.project-link,.tile-link,.nav-cta,.menu-btn { padding: 0.75rem 0.8rem; font-size: 0.34rem; }
+  .badge,.chip,.stat,.game-stat,.tag,.level-chip { font-size: 0.3rem; }
+  .scene { min-height: 21rem; }
+  .pipe { width: 5.8rem; height: 5.4rem; }
+  .hero-sprite { left: 4.4rem; width: 4.3rem; height: 5.6rem; }
+  .cloud { width: 5.2rem; }
   .coin.one { left: 39%; }
   .coin.two { left: 51%; }
-  .marquee-group span { font-size: 0.3rem; }
-  footer { font-size: 0.76rem; }
+  .marquee-group span { font-size: 0.28rem; }
+  footer { font-size: 0.74rem; }
 }
-
-/* Mobile-first polish: ensure single-column flows, bigger tap targets, reduced motion */
-@media (max-width: 900px) {
-  .container, .nav-wrap { width: calc(100% - 1rem); }
-  .hero-grid, .scene-grid-2, .two-col { grid-template-columns: 1fr; }
-  .hero-title { font-size: clamp(1.8rem, 8.8vw, 3.6rem); }
-  .hero-lead { font-size: 0.98rem; }
-  .nav-links { right: 0; width: min(100%, calc(100vw - 2rem)); padding: 0.65rem; }
-  .nav-links a { padding: 0.9rem 1rem; font-size: 0.46rem; }
-  .menu-btn { display: inline-flex; }
-  .nav-cta { display: none; }
-  .scene { min-height: 22rem; }
-  .scene, .scene * { image-rendering: pixelated; }
-  .card, .project, .skill-card, .contact-card { padding: 0.9rem; border-width: 3px; }
-  .button, .project-link, .tile-link { padding: 0.9rem; font-size: 0.38rem; }
-  .marquee { border-width: 3px; }
-  /* reduce animation intensity on mobile for battery and focus */
-  @media (prefers-reduced-motion: no-preference) {
-    .cloud { animation-duration: 12s; }
-    .coin { animation-duration: 2.2s; }
-  }
-}
-
 @media (max-width: 420px) {
-  .hero-title { font-size: clamp(1.6rem, 10vw, 2.8rem); }
-  .hero-lead { font-size: 0.95rem; }
-  .menu-btn { padding: 0.6rem 0.8rem; }
-  .nav-links a { padding: 0.75rem 0.9rem; font-size: 0.44rem; }
-  .scene { min-height: 18.5rem; }
-  .hero { padding-top: 1rem; }
-  .brand-copy strong { font-size: 0.9rem; }
+  .hero-title { font-size: clamp(1.55rem, 11vw, 2.6rem); }
+  .hero-lead { font-size: 0.9rem; }
+  .menu-btn { padding: 0.55rem 0.75rem; }
+  .nav-links a { padding: 0.7rem 0.85rem; font-size: 0.42rem; }
+  .scene { min-height: 17.5rem; }
+  .hero { padding-top: 0.9rem; }
+  .brand-copy strong { font-size: 0.86rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
