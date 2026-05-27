@@ -418,8 +418,6 @@ body:not([data-page="home"]) .hero-title {
 .contact-links strong { font-family: "Bungee", sans-serif; font-size: 0.96rem; line-height: 1.1; }
 footer { padding: 1.2rem 0 2rem; color: rgba(27, 26, 24, 0.72); font-size: 0.82rem; }
 footer .container { text-align: center; }
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
 .interactive,
 .tilt { transform-style: preserve-3d; transition: transform 0.18s ease, box-shadow 0.18s ease; will-change: transform; }
 .interactive:hover,
