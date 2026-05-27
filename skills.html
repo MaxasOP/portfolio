@@ -3,154 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Skills — Manas Chauhan. A balanced stack for product delivery.">
-  <meta name="theme-color" content="#2457ff">
+  <meta name="description" content="Super Maxas skills page - full-stack, programming, business, and execution power-ups in a pixel-art world.">
+  <meta name="theme-color" content="#e53935">
   <meta name="google-site-verification" content="VCBmtD7GlhFh-NGe_74Lz9iO0vcnGW3AXmlqJtr9aYY" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://manaschauhan.vercel.app/skills.html">
-  <title>Skills — Manas Chauhan</title>
+  <title>Super Maxas | Skills</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {--bg:#f4f1eb;--surface:rgba(255,255,255,0.76);--ink:#11131a;--muted:#5e6370;--line:rgba(17,19,26,0.12);--accent:#2457ff;--accent-2:#0f9d73;--shadow:0 24px 55px rgba(17,19,26,0.08);--shadow-lift:10px 10px 0 rgba(17,19,26,0.08);--maxw:1200px;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;scroll-padding-top:5rem;}
-    body{font-family:"Instrument Sans",sans-serif;color:var(--ink);background:radial-gradient(800px 500px at 95% 8%,rgba(36,87,255,0.14),transparent 52%),radial-gradient(600px 420px at 10% 18%,rgba(15,157,115,0.1),transparent 54%),linear-gradient(180deg,#f7f5ef 0%,#ede8de 100%);line-height:1.6;position:relative;}
-    main,nav,footer{position:relative;z-index:1;}
-    .container{width:min(var(--maxw),calc(100% - 2rem));margin:0 auto;}
-    footer .container{text-align:center;}
-    nav{position:sticky;top:0;backdrop-filter:blur(18px);background:rgba(247,244,236,0.78);border-bottom:1px solid rgba(17,19,26,0.08);z-index:40;}
-    .nav-wrap{width:min(var(--maxw),calc(100% - 2rem));margin:0 auto;min-height:4.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0;}
-    .logo{display:inline-flex;align-items:center;gap:0.85rem;text-decoration:none;white-space:nowrap;}
-    .logo-mark{width:2.45rem;height:2.45rem;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;border:1px solid var(--ink);box-shadow:var(--shadow-lift);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:0.75rem;}
-    .logo-copy{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1rem;}
-    .nav-actions{display:flex;align-items:center;gap:0.8rem;}
-    .nav-links{display:flex;align-items:center;gap:1rem;list-style:none;padding:0.65rem 0.9rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,0.7);}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.79rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
-    .nav-cta{text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:0.72rem 1rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;box-shadow:var(--shadow-lift);transition:transform 0.2s;}
-    .nav-cta:hover{transform:translateY(-2px);}
-    .menu-btn{display:none;border:1px solid var(--line);background:rgba(255,255,255,0.72);color:var(--ink);border-radius:999px;padding:0.72rem 0.95rem;font-size:0.78rem;font-weight:700;text-transform:uppercase;cursor:pointer;}
-    main{padding:3rem 0;}
-    section{padding:2rem 0;}
-    .section-head{display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
-    .section-index{flex:0 0 auto;width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,0.72);display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-size:0.8rem;font-weight:700;box-shadow:var(--shadow-lift);}
-    .section-title-group{max-width:52rem;}
-    .eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-family:"Space Grotesk",sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
-    .eyebrow::before{content:"";width:2rem;height:1px;background:currentColor;opacity:0.55;}
-    .section-title{font-family:"Fraunces",serif;font-size:clamp(1.8rem,5vw,3.3rem);line-height:1;letter-spacing:-0.05em;margin-top:0.35rem;margin-bottom:0.5rem;}
-    .section-copy{max-width:50ch;color:var(--muted);font-size:0.95rem;}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:1.5rem;}
-    .skill-card{padding:1.5rem;border:1px solid var(--line);border-radius:1.35rem;background:rgba(255,255,255,0.78);}
-    .skill-card h3{font-size:1rem;margin-bottom:0.5rem;}
-    .skill-card p{font-size:0.9rem;color:var(--muted);margin-bottom:0.8rem;}
-    .chip-wrap{display:flex;flex-wrap:wrap;gap:0.5rem;}
-    .chip{padding:0.35rem 0.6rem;border-radius:999px;border:1px solid rgba(17,19,26,0.12);background:rgba(255,255,255,0.82);font-size:0.74rem;color:#20232b;}
-    footer{border-top:1px solid rgba(17,19,26,0.08);padding:1.5rem 0 2rem;color:var(--muted);font-size:0.82rem;margin-top:2rem;}
-    footer a{text-decoration:none;border-bottom:1px solid currentColor;}
-    footer a:hover{color:var(--ink);}
-    @media (max-width:768px){.nav-links{position:absolute;top:calc(100% + 0.7rem);right:0;display:none;flex-direction:column;gap:0.4rem;width:min(18rem,calc(100vw - 2rem));padding:0.8rem;border-radius:1rem;background:rgba(255,255,255,0.96);box-shadow:var(--shadow);}.nav-links.open{display:flex;}.nav-links a{display:block;padding:0.45rem 0.25rem;}.menu-btn{display:inline-flex;}.nav-cta{display:none;}main{padding:2rem 0;}section{padding:1.5rem 0;}.section-head{flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;}.section-index{width:2.5rem;height:2.5rem;font-size:0.7rem;}.section-title{font-size:clamp(1.4rem,5vw,2.2rem);}.skills-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem;}.skill-card{padding:1rem;}.skill-card h3{font-size:0.95rem;margin-bottom:0.4rem;}.skill-card p{font-size:0.82rem;margin-bottom:0.6rem;}.chip{padding:0.3rem 0.5rem;font-size:0.68rem;}footer{padding:1rem 0 1.5rem;font-size:0.76rem;}}
-    @media (max-width:480px){.nav-wrap{min-height:3.5rem;padding:0 0.75rem;}.logo{gap:0.5rem;font-size:0.85rem;}.logo-mark{width:2rem;height:2rem;font-size:0.65rem;}main{padding:1.5rem 1rem;}section{padding:1rem 0;}.container{width:calc(100% - 1rem);}.section-head{gap:0.5rem;}.section-index{width:2rem;height:2rem;font-size:0.65rem;}.section-title{font-size:clamp(1.2rem,4vw,1.8rem);}.section-copy{font-size:0.85rem;}.skills-grid{grid-template-columns:1fr;gap:1rem;margin-top:1rem;}.skill-card{padding:1rem;}.skill-card h3{font-size:0.88rem;margin-bottom:0.35rem;}.skill-card p{font-size:0.78rem;margin-bottom:0.5rem;}.chip{padding:0.25rem 0.45rem;font-size:0.63rem;}footer{padding:0.8rem 1rem 1.2rem;font-size:0.7rem;}.eyebrow::before{width:1.2rem;}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/super-maxas.css">
 </head>
-<body>
+<body class="shell" data-page="skills">
+  <div class="skyline" aria-hidden="true"></div>
+  <div class="scrollbar" aria-hidden="true"></div>
+
   <nav>
     <div class="nav-wrap">
-      <a class="logo" href="/" aria-label="Manas Chauhan home">
-        <span class="logo-mark">MC</span>
-        <span class="logo-copy">Manas Chauhan</span>
+      <a class="brand" href="/" aria-label="Super Maxas home">
+        <span class="brand-mark">MX</span>
+        <span class="brand-copy">
+          <strong>Super Maxas</strong>
+          <span>Pixel quest portfolio</span>
+        </span>
       </a>
+
       <div class="nav-actions">
         <ul class="nav-links" id="navLinks">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/skills.html" class="active">Skills</a></li>
-          <li><a href="/projects.html">Work</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/" data-route="home">Home</a></li>
+          <li><a href="/about.html" data-route="about">About</a></li>
+          <li><a href="/skills.html" data-route="skills">Skills</a></li>
+          <li><a href="/projects.html" data-route="projects">Work</a></li>
+          <li><a href="/contact.html" data-route="contact">Contact</a></li>
         </ul>
-        <a class="nav-cta" href="/contact.html">Available now</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">Menu</button>
+        <a class="nav-cta" href="mailto:manaschauhan.ms@gmail.com">Start quest</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">Menu</button>
       </div>
     </div>
   </nav>
 
   <main>
-    <div class="container">
-      <section id="skills">
-        <div class="section-head">
-          <div class="section-index">02</div>
-          <div class="section-title-group">
-            <span class="eyebrow">Skills</span>
-            <h1 class="section-title">A balanced stack for product delivery.</h1>
-            <p class="section-copy">I am most useful where interface quality, technical clarity, and practical execution need to meet in the same place.</p>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">World 1-3 / Power-ups</div>
+          <h1 class="hero-title">A loadout built for <span class="accent">useful</span> delivery.</h1>
+          <p class="hero-lead">I like working where full-stack quality, business context, and practical execution need to meet in the same stage. The result is sharper when every skill has a job.</p>
+          <div class="cta-row">
+            <a class="button primary" href="/projects.html">See builds</a>
+            <a class="button alt" href="/contact.html">Hire route</a>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Full-stack power-up</span>
+            <span class="badge">Product combo</span>
+            <span class="badge">Execution speed</span>
           </div>
         </div>
 
-        <div class="skills-grid">
+        <aside class="scene-shell interactive" aria-label="Power-up room">
+          <div class="scene" style="min-height: 24rem;">
+            <div class="scene-grid" aria-hidden="true"></div>
+            <div class="cloud one"></div>
+            <div class="cloud two"></div>
+            <div class="coin one"></div>
+            <div class="coin two"></div>
+            <div class="block-run" style="left: 10%; bottom: 11rem;">
+              <div class="block"></div>
+              <div class="block question"></div>
+              <div class="block"></div>
+            </div>
+            <div class="hero-sprite" style="left: 6.5rem; bottom: 5.6rem;"></div>
+            <div class="pipe"></div>
+            <div class="ground"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">01</div>
+          <div class="section-title-group">
+            <div class="eyebrow">Skill map</div>
+            <h2 class="section-title">The four power-ups I keep ready.</h2>
+            <p class="section-copy">I work best when the stack feels balanced: interface craft, code clarity, business context, and dependable follow-through.</p>
+          </div>
+        </div>
+
+        <div class="skill-grid">
           <article class="skill-card">
-            <h3>Frontend</h3>
-            <p>Responsive interfaces, motion polish, and reusable UI patterns.</p>
-            <div class="chip-wrap">
-              <span class="chip">HTML5</span>
-              <span class="chip">CSS3</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">React</span>
-              <span class="chip">UI Motion</span>
+            <div class="kicker">Full-stack</div>
+            <h3>Responsive interfaces</h3>
+            <p>End-to-end delivery, system discipline, and layouts that stay readable at speed.</p>
+            <div class="meter-block">
+              <div class="meter-label"><span>Build craft</span><span>High</span></div>
+              <div class="meter"><span style="width: 92%"></span></div>
+            </div>
+            <div class="chip-row">
+              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span>
             </div>
           </article>
 
           <article class="skill-card">
-            <h3>Programming</h3>
-            <p>Code that stays readable, practical, and easy to extend.</p>
-            <div class="chip-wrap">
-              <span class="chip">Java</span>
-              <span class="chip">Python</span>
-              <span class="chip">REST APIs</span>
-              <span class="chip">Git</span>
-              <span class="chip">GitHub</span>
+            <div class="kicker">Programming</div>
+            <h3>Practical code</h3>
+            <p>Readable logic, dependable structure, and work that stays easy to extend.</p>
+            <div class="meter-block">
+              <div class="meter-label"><span>Build power</span><span>Strong</span></div>
+              <div class="meter"><span style="width: 85%"></span></div>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Java</span><span class="chip">Python</span><span class="chip">REST</span><span class="chip">Git</span>
             </div>
           </article>
 
           <article class="skill-card">
-            <h3>Business</h3>
-            <p>Research, brand thinking, and analysis that supports better decisions.</p>
-            <div class="chip-wrap">
-              <span class="chip">Marketing</span>
-              <span class="chip">Brand Strategy</span>
-              <span class="chip">Market Research</span>
-              <span class="chip">Analytics</span>
+            <div class="kicker">Business</div>
+            <h3>Decision support</h3>
+            <p>Research, brand thinking, and analysis that sharpen direction before launch.</p>
+            <div class="meter-block">
+              <div class="meter-label"><span>Insight</span><span>Active</span></div>
+              <div class="meter"><span style="width: 80%"></span></div>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Marketing</span><span class="chip">Research</span><span class="chip">Analytics</span><span class="chip">Strategy</span>
             </div>
           </article>
 
           <article class="skill-card">
-            <h3>Execution</h3>
-            <p>Working with people, making decisions, and keeping the momentum clean.</p>
-            <div class="chip-wrap">
-              <span class="chip">Leadership</span>
-              <span class="chip">Communication</span>
-              <span class="chip">Collaboration</span>
-              <span class="chip">Problem Solving</span>
+            <div class="kicker">Execution</div>
+            <h3>Team momentum</h3>
+            <p>Communication, collaboration, and keeping the whole run clean under pressure.</p>
+            <div class="meter-block">
+              <div class="meter-label"><span>Team play</span><span>Reliable</span></div>
+              <div class="meter"><span style="width: 88%"></span></div>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Leadership</span><span class="chip">Communication</span><span class="chip">Collaboration</span><span class="chip">Problem solving</span>
             </div>
           </article>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div>
+          <div class="section-head">
+            <div class="section-index">02</div>
+            <div class="section-title-group">
+              <div class="eyebrow">Tool box</div>
+              <h2 class="section-title">The stack behind the movement.</h2>
+              <p class="section-copy">Tools and habits that help me keep the output clean, fast, and practical.</p>
+            </div>
+          </div>
+          <div class="story-card card">
+            <p>I prefer work that is easy to understand and easy to ship. That usually means strong structure, smaller decisions, and no decoration that does not earn its place.</p>
+            <p>I also like learning from adjacent areas, so the work can hold up not just visually, but strategically.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <div class="section-index">03</div>
+            <div class="section-title-group">
+              <div class="eyebrow">Combat ready</div>
+              <h2 class="section-title">How I like to work.</h2>
+              <p class="section-copy">A good outcome usually comes from clear communication, quick iteration, and staying focused on the user experience.</p>
+            </div>
+          </div>
+          <div class="orbital">
+            <div class="mini-card">
+              <span>01</span>
+              <strong>Plan</strong>
+              <p class="contact-copy">Map the objective before touching the interface.</p>
+            </div>
+            <div class="mini-card">
+              <span>02</span>
+              <strong>Build</strong>
+              <p class="contact-copy">Use a stack that stays maintainable under pressure.</p>
+            </div>
+            <div class="mini-card">
+              <span>03</span>
+              <strong>Refine</strong>
+              <p class="contact-copy">Polish the motion and reduce anything noisy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">2026 Manas Chauhan</div>
+    <div class="container">Super Maxas - <a href="mailto:manaschauhan.ms@gmail.com">manaschauhan.ms@gmail.com</a></div>
   </footer>
 
-  <script>
-    const navLinks = document.getElementById("navLinks");
-    const menuBtn = document.getElementById("menuBtn");
-    function closeMenu() {navLinks.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}
-    function toggleMenu() {const isOpen = navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(isOpen));}
-    menuBtn.addEventListener("click",toggleMenu);
-    navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
-    document.addEventListener("keydown",(e)=>{if(e.key==="Escape")closeMenu();});
-    window.addEventListener("resize",()=>{if(window.innerWidth>768)closeMenu();});
-  </script>
+  <script src="/super-maxas.js"></script>
 </body>
 </html>
