@@ -68,7 +68,7 @@ img { display: block; max-width: 100%; }
 ::selection { background: rgba(229, 57, 53, 0.22); }
 :focus-visible { outline: 3px solid rgba(255, 213, 74, 0.95); outline-offset: 3px; }
 .container { width: min(var(--maxw), calc(100% - 2rem)); margin: 0 auto; }
-.shell { position: relative; overflow: hidden; }
+.shell { position: relative; overflow-x: hidden; }
 .skyline {
   position: fixed; inset: 0 0 auto; height: 42vh; pointer-events: none; z-index: 0; opacity: 0.95;
 }
