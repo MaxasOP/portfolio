@@ -1,70 +1,48 @@
 # Manas Chauhan — Portfolio
 
-This repository contains a multi-page portfolio built with modern web development tools. It includes both a lightweight serverless handler optimized for deployment on Vercel and a convenient local test server for development.
+This repository is a static, multi-page portfolio served with a small Node.js `server.js` for local development and easy deployment (for example, Vercel).
 
-## Features
+## What this repo contains
 
-- **Multi-page Portfolio**: Showcases projects, skills, about information, and contact details.
-- **Serverless Ready**: Easily deploy on Vercel or any serverless platform.
-- **Local Development**: Spin up a local web server for development and testing.
-- **Responsive Design**: Looks good on all devices.
+- Static HTML pages: `index.html`, `about.html`, `skills.html`, `projects.html`, `contact.html`, `maxasop-portfolio.html`, and `sitemap.html`.
+- Static assets: `super-maxas.css`, `super-maxas.js`, `favicon.svg`, and files in `dist/` (if present).
+- A minimal Node server: `server.js` (used for local serving).
+- An API folder for serverless endpoints: `api/` (optional; used on Vercel deployments).
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
+- Node.js (16+ recommended)
+- npm (or yarn)
 
-- [Node.js](https://nodejs.org/) (version 16 or higher recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://classic.yarnpkg.com/en/)
+## Install and run locally
 
-### Installation
+Install dependencies and start the local server:
 
 ```bash
-git clone https://github.com/MaxasOP/portfolio.git
-cd portfolio
 npm install
-```
-
-### Running Locally
-
-```bash
 npm run dev
 ```
-This will start the local development server. Visit [http://localhost:3000](http://localhost:3000) to view the portfolio in your browser.
 
-### Deployment
+Then open http://localhost:3000 in your browser.
 
-This portfolio is optimized for serverless deployment, specifically with [Vercel](https://vercel.com/):
+`package.json` exposes `start` and `dev` which both run `node server.js`.
 
-1. Commit/push your changes to the `main` branch (or your preferred branch).
-2. Connect your repository to Vercel and follow the deployment steps.
-3. Updates will be automatically deployed with every push.
+## Deployment
 
-## Project Structure
+This site is suitable for static hosting or serverless platforms. To deploy on Vercel, connect the repository and follow Vercel's import flow — the `api/` folder will be used for serverless functions and static files will be served from the root.
 
-```
-/
-├─ public/         # Static assets and images
-├─ src/            # Main application source code
-│  ├─ components/  # Reusable React components
-│  ├─ pages/       # Pages/routes
-│  └─ ...          
-├─ api/            # Serverless functions (for Vercel)
-├─ README.md
-├─ package.json
-└─ ... 
-```
+## Notes and maintenance
 
-## Customization
-
-You can customize the content by editing files in the `src/pages` and `src/components` directories. Add your own projects, skills, and personal information.
+- The current `sitemap.xml` and `sitemap.html` list the main pages; if you add pages (for example `maxasop-portfolio.html`) keep both sitemap files in sync and update `lastmod` values.
+- The site is intentionally simple: edit the HTML files directly to change content.
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or pull requests for improvements or ideas.
+Feel free to open issues or PRs for fixes or content updates.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
 
 ---
 
