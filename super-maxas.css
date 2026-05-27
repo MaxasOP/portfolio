@@ -186,8 +186,6 @@ body:not([data-page="home"]) .hero-title {
 .section-title .accent { color: #ffe25b; }
 
 .hero-title span:first-child { color: #ffffff; }
-.title-white,
-.title-white .accent { color: #ffffff !important; }
 .hero-lead,
 .section-copy,
 .card p,
