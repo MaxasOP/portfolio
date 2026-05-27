@@ -173,7 +173,7 @@ section { padding: 4.5rem 0; }
 .eyebrow::before { content: ""; width: 2rem; height: 2px; background: currentColor; opacity: 0.65; }
 .hero-title,
 .section-title {
-  margin: 0; font-family: "Bungee", sans-serif; letter-spacing: 0.02em; line-height: 0.94; color: var(--brick); text-shadow: 0 7px 0 rgba(27, 26, 24, 0.72);
+  margin: 0; font-family: "Bungee", sans-serif; letter-spacing: 0.02em; line-height: 0.94; color: var(--ink); text-shadow: 0 7px 0 rgba(27, 26, 24, 0.72);
 }
 .hero-title { font-size: clamp(2.4rem, 9vw, 5.2rem); max-width: 9ch; margin: 0.6rem 0 0.9rem; }
 body:not([data-page="home"]) .hero-title {
@@ -181,7 +181,7 @@ body:not([data-page="home"]) .hero-title {
   max-width: 22ch;
   text-wrap: balance;
 }
-.section-title { font-size: clamp(1.8rem, 4.6vw, 3.7rem); }
+.section-title { font-size: clamp(1.8rem, 4.6vw, 3.7rem); color: var(--brick); }
 .hero-title .accent,
 .section-title .accent { color: #ffe25b; }
 .hero-lead,
@@ -354,9 +354,7 @@ body:not([data-page="home"]) .hero-title {
 .contact-card strong,
 .project h3,
 .skill-card h3,
-.stage-title {
-  display: block; margin: 0 0 0.35rem; font-family: "Bungee", sans-serif; font-size: 1rem; line-height: 1.08; color: var(--brick);
-}
+.stage-title { display: block; margin: 0 0 0.35rem; font-family: "Bungee", sans-serif; font-size: 1rem; line-height: 1.08; }
 .mini-card span,
 .metric span,
 .timeline-item time,
@@ -407,7 +405,7 @@ body:not([data-page="home"]) .hero-title {
 .stage-visual .level-art { grid-template-columns: 1fr 1fr; align-items: end; }
 .tile-stack,
 .reward-stack { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.brick-run.compact { display: grid; grid-template-columns: repeat(4, 2rem); gap: 0.3rem; }
+.brick-run.compact { position: static; display: grid; grid-template-columns: repeat(4, 2rem); gap: 0.3rem; }
 .brick-run.compact .block { width: 2rem; height: 2rem; }
 .brick-run.compact .block.question { width: 2rem; height: 2rem; }
 .project-link,
@@ -482,7 +480,7 @@ footer .container { text-align: center; }
   .section-index { width: 2.2rem; height: 2.2rem; font-size: 0.4rem; }
   .hero-title { font-size: clamp(1.9rem, 13vw, 3.2rem); }
   body:not([data-page="home"]) .hero-title { font-size: clamp(1.55rem, 8vw, 2.6rem); max-width: 24ch; }
-  .section-title { font-size: clamp(1.35rem, 8vw, 2.1rem); }
+  .section-title { font-size: clamp(1.35rem, 8vw, 2.1rem); color: var(--brick); }
   .hero-lead,.section-copy,.card p,.timeline-item p,.contact-copy,.tile-copy,.project p { font-size: 0.92rem; }
   .button,.link-button,.project-link,.tile-link,.nav-cta,.menu-btn { padding: 0.75rem 0.8rem; font-size: 0.34rem; }
   .badge,.chip,.stat,.game-stat,.tag,.level-chip { font-size: 0.3rem; }
