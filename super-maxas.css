@@ -162,7 +162,7 @@ section { padding: 4.5rem 0; }
 .contact-grid,
 .skill-grid,
 .timeline-grid { display: grid; gap: 1rem; }
-.hero-grid { grid-template-columns: 1.06fr 0.94fr; align-items: center; }
+.hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
 .hero-grid > * { min-width: 0; }
 .hero-copy { padding: 0.6rem 0; max-width: 100%; }
 .eyebrow {
