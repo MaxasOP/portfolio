@@ -181,11 +181,13 @@ body:not([data-page="home"]) .hero-title {
   max-width: 22ch;
   text-wrap: balance;
 }
-.section-title { font-size: clamp(1.8rem, 4.6vw, 3.7rem); color: #fffaf0; text-shadow: 0 4px 0 rgba(27, 26, 24, 0.6); }
+.section-title { font-size: clamp(1.8rem, 4.6vw, 3.7rem); color: var(--brick); text-shadow: 0 4px 0 rgba(27, 26, 24, 0.6); }
 .hero-title .accent,
 .section-title .accent { color: #ffe25b; }
 
 .hero-title span:first-child { color: #ffffff; }
+.title-white,
+.title-white .accent { color: #ffffff !important; }
 .hero-lead,
 .section-copy,
 .card p,
@@ -479,7 +481,7 @@ footer .container { text-align: center; }
   .section-index { width: 2.2rem; height: 2.2rem; font-size: 0.4rem; }
   .hero-title { font-size: clamp(1.9rem, 13vw, 3.2rem); }
   body:not([data-page="home"]) .hero-title { font-size: clamp(1.55rem, 8vw, 2.6rem); max-width: 24ch; }
-  .section-title { font-size: clamp(1.35rem, 8vw, 2.1rem); color: #fffaf0; text-shadow: 0 3px 0 rgba(27, 26, 24, 0.6); }
+  .section-title { font-size: clamp(1.35rem, 8vw, 2.1rem); color: var(--brick); text-shadow: 0 3px 0 rgba(27, 26, 24, 0.6); }
   .hero-lead,.section-copy,.card p,.timeline-item p,.contact-copy,.tile-copy,.project p { font-size: 0.92rem; }
   .button,.link-button,.project-link,.tile-link,.nav-cta,.menu-btn { padding: 0.75rem 0.8rem; font-size: 0.34rem; }
   .badge,.chip,.stat,.game-stat,.tag,.level-chip { font-size: 0.3rem; }
