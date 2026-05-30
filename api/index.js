@@ -17,8 +17,15 @@ module.exports = (req, res) => {
       '/contact.html': 'contact.html',
       '/sitemap.xml': 'sitemap.xml',
       '/sitemap.html': 'sitemap.html',
+      '/site.webmanifest': 'site.webmanifest',
       '/favicon.svg': 'favicon.svg',
-      '/favicon.ico': 'favicon.svg',
+      '/favicon.ico': 'favicon.ico',
+      '/favicon.png': 'favicon.png',
+      '/favicon-16x16.png': 'favicon-16x16.png',
+      '/favicon-32x32.png': 'favicon-32x32.png',
+      '/apple-touch-icon.png': 'apple-touch-icon.png',
+      '/android-chrome-192x192.png': 'android-chrome-192x192.png',
+      '/android-chrome-512x512.png': 'android-chrome-512x512.png',
       '/robots.txt': 'robots.txt'
     };
 
@@ -33,8 +40,18 @@ module.exports = (req, res) => {
     }
 
     const ext = path.extname(filePath).toLowerCase();
-    const textTypes = ['.html', '.xml', '.txt', '.svg'];
-    const contentType = textTypes.includes(ext) ? (ext === '.xml' ? 'application/xml' : ext === '.txt' ? 'text/plain' : ext === '.svg' ? 'image/svg+xml' : 'text/html; charset=utf-8') : 'application/octet-stream';
+    const textTypes = ['.html', '.xml', '.txt', '.svg', '.webmanifest'];
+    const contentType = textTypes.includes(ext)
+      ? (ext === '.xml'
+        ? 'application/xml'
+        : ext === '.txt'
+          ? 'text/plain'
+          : ext === '.svg'
+            ? 'image/svg+xml'
+            : ext === '.webmanifest'
+              ? 'application/manifest+json'
+              : 'text/html; charset=utf-8')
+      : 'application/octet-stream';
 
     const data = fs.readFileSync(filePath);
     res.statusCode = 200;

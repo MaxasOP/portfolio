@@ -18,8 +18,15 @@ app.get('*', (req, res) => {
     '/contact': 'contact.html',
     '/sitemap.xml': 'sitemap.xml',
     '/sitemap.html': 'sitemap.html',
+    '/site.webmanifest': 'site.webmanifest',
     '/favicon.svg': 'favicon.svg',
-    '/favicon.ico': 'favicon.svg',
+    '/favicon.ico': 'favicon.ico',
+    '/favicon.png': 'favicon.png',
+    '/favicon-16x16.png': 'favicon-16x16.png',
+    '/favicon-32x32.png': 'favicon-32x32.png',
+    '/apple-touch-icon.png': 'apple-touch-icon.png',
+    '/android-chrome-192x192.png': 'android-chrome-192x192.png',
+    '/android-chrome-512x512.png': 'android-chrome-512x512.png',
     '/robots.txt': 'robots.txt'
   };
 
@@ -29,6 +36,7 @@ app.get('*', (req, res) => {
   if (!fs.existsSync(filePath)) return res.status(404).send('Not found');
   const ext = path.extname(filePath).toLowerCase();
   if (ext === '.xml') return res.type('application/xml').sendFile(filePath);
+  if (ext === '.webmanifest') return res.type('application/manifest+json').sendFile(filePath);
   if (ext === '.svg') return res.type('image/svg+xml').sendFile(filePath);
   if (ext === '.txt') return res.type('text/plain').sendFile(filePath);
   return res.sendFile(filePath);
