@@ -5,8 +5,8 @@ module.exports = (req, res) => {
   try {
     const urlPath = (req.url || '/').split('?')[0];
     const map = {
-      '/': 'maxasop-portfolio.html',
-      '/index.html': 'maxasop-portfolio.html',
+      '/': 'index.html',
+      '/index.html': 'index.html',
       '/about': 'about.html',
       '/about.html': 'about.html',
       '/skills': 'skills.html',
@@ -29,7 +29,7 @@ module.exports = (req, res) => {
       '/robots.txt': 'robots.txt'
     };
 
-    const filename = map[urlPath] || 'maxasop-portfolio.html';
+    const filename = map[urlPath] || 'index.html';
     const filePath = path.join(process.cwd(), filename);
 
     if (!fs.existsSync(filePath)) {

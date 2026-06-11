@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname)));
 app.get('*', (req, res) => {
   const urlPath = req.path || '/';
   const map = {
-    '/': 'maxasop-portfolio.html',
+    '/': 'index.html',
     '/about': 'about.html',
     '/skills': 'skills.html',
     '/projects': 'projects.html',
@@ -30,7 +30,7 @@ app.get('*', (req, res) => {
     '/robots.txt': 'robots.txt'
   };
 
-  const filename = map[urlPath] || 'maxasop-portfolio.html';
+  const filename = map[urlPath] || 'index.html';
   const filePath = path.join(__dirname, filename);
 
   if (!fs.existsSync(filePath)) return res.status(404).send('Not found');

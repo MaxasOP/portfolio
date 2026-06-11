@@ -1,1 +1,9 @@
-{}
+{
+  "redirects": [
+    {
+      "source": "/maxasop-portfolio.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
